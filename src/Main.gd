@@ -44,6 +44,24 @@ func _physics_process(delta):
 	else:
 		$Helicopter.applied_force = Vector2()
 		
+	if Input.is_action_just_pressed("rope_toggle"):
+		var existing_rope = self.get_node("Rope")
+		if existing_rope == null:
+			var hook_class = preload("res://Hook.tscn")
+			var hook = hook_class.instance()
+			hook.position = $Helicopter.position
+			hook.position.y += 200
+			add_child(hook)
+
+			var rope_class = preload("res://Rope.tscn")
+			var rope = rope_class.instance()
+			add_child(rope)
+		else:
+			existing_rope.queue_free()
+			var existing_hook = self.get_node("Hook")
+			existing_hook.queue_free()
+		pass
+		
 	if Input.is_action_just_pressed("detach_hook"):
 		if $Rope.detach_cargo():
 			$AudioStreamPlayer_Detach.play()

@@ -31,7 +31,6 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		rotation_dir -= .1
 	$Helicopter.applied_torque = rotation_dir * torque
-	#$Helicopter.apply_torque_impulse = rotation_dir * torque
 	self
 	
 	if Input.is_action_pressed("ui_up"):
@@ -40,7 +39,7 @@ func _physics_process(delta):
 		var th = up_pos - parent_pos
 
 		th = Vector2(th.normalized()) * thrust# * -1
-		$Helicopter.applied_force = th#thrust.rotated($Helicopter.rotation)
+		$Helicopter.applied_force = th # thrust.rotated($Helicopter.rotation)
 	else:
 		$Helicopter.applied_force = Vector2()
 		

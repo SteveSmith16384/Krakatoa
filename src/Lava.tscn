@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Lava.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 10.6675
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 13.6074
+
+[node name="Lava" type="RigidBody2D"]
+mass = 50.0
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -8.24069
+margin_top = -11.2373
+margin_right = 8.75931
+margin_bottom = 6.7627
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RemoveArea2D"]
+shape = SubResource( 2 )
+
+[node name="RemoveTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="RemoveArea2D" to="." method="_on_RemoveArea2D_body_entered"]
+[connection signal="timeout" from="RemoveTimer" to="." method="_on_RemoveTimer_timeout"]

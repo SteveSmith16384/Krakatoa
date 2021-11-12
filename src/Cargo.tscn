@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Cargo.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.433, 15.6187 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29.1913, 18.9769 )
+
+[node name="Cargo" type="RigidBody2D" groups=[
+"cargo",
+]]
+mass = 5.0
+can_sleep = false
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="CrashArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrashArea2D"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="CrashArea2D" to="." method="_on_CrashArea2D_body_entered"]

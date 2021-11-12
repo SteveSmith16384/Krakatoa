@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fog-horn-sound-effect.wav-14f58cca2897e62f1972d8b895c32c24.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/Fog-horn-sound-effect.wav"
+dest_files=[ "res://.import/Fog-horn-sound-effect.wav-14f58cca2897e62f1972d8b895c32c24.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

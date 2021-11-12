@@ -1,13 +1,13 @@
 extends Node2D
 
-export var num_segments: int = 10
+export var num_segments: int = 4
 export var enabled: bool = true
 var segments: Array = []
-var string_node_scene: PackedScene = load("res://godot_rope/RopeNode.tscn")
-var rope_joint_scene: PackedScene = load("res://godot_rope/RopeJoint.tscn")
-onready var player_1: Node2D = $"/root/Main/Player"
+var string_node_scene: PackedScene = load("res://RopeNode.tscn")
+var rope_joint_scene: PackedScene = load("res://RopeJoint.tscn")
+onready var player_1: Node2D = $"/root/Main/Helicopter"
 onready var player_2: RigidBody2D = $"/root/Main/Hook"
-onready var start_position: Vector2 = player_1.transform.get_origin()
+onready var start_position: Vector2# = player_1.transform.get_origin()
 onready var end_position: Vector2 = player_2.transform.get_origin()
 var last_joint
 
@@ -20,6 +20,8 @@ func _ready():
 		var position: Vector2
 		if i == 0:
 			position = self.player_1.transform.get_origin()
+			position.y += 50
+			start_position = position
 		elif i == self.num_segments -1:
 			position = self.player_2.transform.get_origin()
 		else:

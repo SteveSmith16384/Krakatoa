@@ -16,3 +16,6 @@ texture = ExtResource( 1 )
 
 [node name="Up" type="Position2D" parent="."]
 position = Vector2( 0.44545, -42.7632 )
+
+[node name="RopeStart" type="Position2D" parent="."]
+position = Vector2( 26.2816, 13.3635 )

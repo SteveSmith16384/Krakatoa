@@ -1,6 +1,6 @@
 extends Position2D
 
-var rocket_class = preload("res://godot_rope/Rocket.tscn")
+var rocket_class = preload("res://Rocket.tscn")
 
 
 func _on_Timer_timeout():

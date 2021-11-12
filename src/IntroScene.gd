@@ -15,7 +15,7 @@ func _process(delta):
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode != KEY_ESCAPE:
-			get_tree().change_scene("res://godot_rope/Main.tscn")
+			get_tree().change_scene("res://Main.tscn")
 		else:
 			get_tree().quit()
 	pass

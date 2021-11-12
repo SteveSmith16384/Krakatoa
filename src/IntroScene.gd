@@ -7,8 +7,6 @@ func _ready():
 	
 	
 func _process(delta):
-	$Dockyard.rotate(delta)
-	$Crane.rotate(-delta)
 	pass
 	
 

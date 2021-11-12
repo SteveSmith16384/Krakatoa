@@ -8,7 +8,9 @@ radius = 10.6675
 [sub_resource type="CircleShape2D" id=2]
 radius = 13.6074
 
-[node name="Lava" type="RigidBody2D"]
+[node name="Lava" type="RigidBody2D" groups=[
+"remove_in_water",
+]]
 mass = 50.0
 script = ExtResource( 1 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Helicopter.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Volcano.tscn" type="PackedScene" id=6]
 [ext_resource path="res://House.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Dinghy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Submarine.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,8 +21,8 @@ position = Vector2( 638.757, 202.953 )
 [node name="Camera2D" type="Camera2D" parent="Helicopter"]
 position = Vector2( -41.6744, -46.5041 )
 current = true
-limit_top = 0
-limit_bottom = 0
+limit_top = -50
+limit_bottom = -50
 smoothing_enabled = true
 
 [node name="Tanker" parent="." instance=ExtResource( 5 )]
@@ -31,9 +30,6 @@ position = Vector2( 1637.45, 470.001 )
 
 [node name="Dinghy" parent="." instance=ExtResource( 8 )]
 position = Vector2( 993.778, 510.744 )
-
-[node name="Submarine" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2276, 624 )
 
 [node name="Island1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 533.128, 516.31 )
@@ -49,3 +45,6 @@ position = Vector2( 93.9985, -89.3898 )
 
 [node name="House2" parent="Volcano" instance=ExtResource( 7 )]
 position = Vector2( 422.027, -40.1404 )
+
+[node name="SubmarineStartPosition" type="Position2D" parent="."]
+position = Vector2( 2293.97, 766.898 )

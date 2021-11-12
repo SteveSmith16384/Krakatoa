@@ -20,3 +20,5 @@ color = Color( 0, 0, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="body_entered" from="." to="." method="_on_Water_body_entered"]

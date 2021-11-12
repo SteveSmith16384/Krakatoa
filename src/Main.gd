@@ -16,6 +16,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://godot_rope/IntroScene.tscn")
 		return
+		
+#	$Camera2D.position = $Helicopter.position
 	pass
 	
 
@@ -28,12 +30,15 @@ func _physics_process(delta):
 		rotation_dir += .1
 	elif Input.is_action_pressed("ui_left"):
 		rotation_dir -= .1
-		$Helicopter.applied_torque = rotation_dir * torque
-		#$Helicopter.apply_torque_impulse = rotation_dir * torque
+	$Helicopter.applied_torque = rotation_dir * torque
+	#$Helicopter.apply_torque_impulse = rotation_dir * torque
 	self
 	
 	if Input.is_action_pressed("ui_up"):
-		var th: Vector2 = $Helicopter/Up.position
+		var up_pos: Vector2 = $Helicopter/Up.global_position
+		var parent_pos: Vector2 = $Helicopter.global_position
+		var th = up_pos - parent_pos
+
 		th = Vector2(th.normalized()) * thrust# * -1
 		$Helicopter.applied_force = th#thrust.rotated($Helicopter.rotation)
 	else:

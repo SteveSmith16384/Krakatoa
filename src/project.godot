@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Krakatoa"
 run/main_scene="res://Main.tscn"
-boot_splash/image="res://splash_screen.png"
 config/icon="res://icon.png"
 
 [autoload]
